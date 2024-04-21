@@ -31,3 +31,26 @@ body {
     text-wrap: balance;
   }
 }
+
+::-webkit-scrollbar {
+  background-color: transparent;
+ }
+
+ #focus:focus {
+  border-color: white !important;
+ }
+
+ .reset-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  line-height: 1.15;
+  color: inherit;
+  font-family: inherit;
+  border-radius: 0;
+  box-sizing: border-box;
+ }
