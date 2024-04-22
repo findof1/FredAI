@@ -68,12 +68,17 @@ export default function Home() {
           <div ref={messagesEndRef}></div>
         </div>
         <div className=" h-[10%] flex flex-row mt-auto w-full items-center rounded-md">
-          <div className="w-[60%] border-2 border-white z-[100] rounded-lg">
+          <div className="w-[87%] border-2 border-white z-[100] rounded-lg">
           <input
           id="focus"
           placeholder="Type Your Message"
             className="focus-white text-white w-full text-xl pl-2 p-2 rounded-lg bg-transparent border-0 focus:border-0 reset-input"
             type="text"
+            onKeyDown={(e)=>{
+              if(e.key == "Enter"){
+                sendPrompt()
+              }
+            }}
             style={{
               borderColor: 'white',
               ':focus': {
@@ -86,7 +91,7 @@ export default function Home() {
             }}
           ></input>
           </div>
-          <button className="ml-auto mr-4 text-xl border-2 border-white rounded-lg p-2" onClick={sendPrompt}>Send</button>
+          <button className=" w-[8%] ml-auto mr-4 text-xl border-2 border-white rounded-lg p-2" onClick={sendPrompt}>Send</button>
         </div>
       </div>
     </div>
