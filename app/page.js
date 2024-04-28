@@ -53,13 +53,13 @@ export default function Home() {
   },[msgs])
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-blue-200 min-h-screen bg-fixed bg-cover text-white">
-      <div class="max-w-4xl mx-auto p-5 text-center">
-        <h1 class="text-4xl uppercase tracking-wider mb-5 mt-[7vh]">Fred LLM</h1>
-        <p class="text-lg mb-3">Chat with Fred, your own AI assistant.</p>
+    <div className="flex flex-col w-screen h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-blue-200 min-h-screen bg-fixed bg-cover text-white">
+      <div class="max-w-4xl mx-auto p-5 text-center h-[20vh]">
+        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl uppercase tracking-wider mb-5 mt-[2vh]">Fred LLM</h1>
+        <p class="text-sm sm:text-md md:text-md lg:text-lg mb-3">Chat with Fred, your own AI assistant.</p>
       </div>
-      <div className="w-[60vw] ml-[20vw] h-[70vh] items-center flex flex-col p-2">
-        <div className="break-words flex flex-col overflow-auto h-[90%] mb-5">
+      <div className="w-[60vw] ml-[20vw] h-[70%] items-center flex flex-col p-2">
+        <div className="break-words flex flex-col overflow-auto h-[80%] mb-5">
           {msgs.map((item, index) => (
             <p key={index} className="break-words text-wrap whitespace-normal w-[60vw] mt-2" style={{'word-wrap': 'break-word'}}>
               {item.sender}: {item.msg}
@@ -68,11 +68,11 @@ export default function Home() {
           <div ref={messagesEndRef}></div>
         </div>
         <div className=" h-[10%] flex flex-row mt-auto w-full items-center rounded-md">
-          <div className="w-[87%] border-2 border-white z-[100] rounded-lg">
+          <div className="w-[57%] sm:w-[67%] md:w-[77%] lg:w-[87%] border-2 border-white z-[100] rounded-lg">
           <input
           id="focus"
           placeholder="Type Your Message"
-            className="focus-white text-white w-full text-xl pl-2 p-2 rounded-lg bg-transparent border-0 focus:border-0 reset-input"
+            className="focus-white text-white w-full text-md sm:text-lg md:text-lg lg:text-xl pl-2 p-2 rounded-lg bg-transparent border-0 focus:border-0 reset-input"
             type="text"
             onKeyDown={(e)=>{
               if(e.key == "Enter"){
@@ -91,7 +91,7 @@ export default function Home() {
             }}
           ></input>
           </div>
-          <button className=" w-[8%] ml-auto mr-4 text-xl border-2 border-white rounded-lg p-2" onClick={sendPrompt}>Send</button>
+          <button className="w-[38%] sm:w-[28%] md:w-[18%] lg:w-[8%] ml-auto mr-4 text-xl border-2 border-white rounded-lg p-2" onClick={sendPrompt}>Send</button>
         </div>
       </div>
     </div>
